@@ -413,7 +413,7 @@ elif page.startswith("3"):
 elif page.startswith("4"):
     st.title("Audit Faktor Penggerak Eksternal Utama (Feature Governance)")
     st.caption(
-        "Permutation Feature Importance — diagregasi lintas 15 fold, dibaca langsung dari artefak governance. "
+        "Permutation Feature Importance diagregasi lintas 15 fold, dibaca langsung dari artefak governance. "
         "Metode ini dipilih sebagai padanan neural network atas *native feature importance* milik Random Forest, "
         "agar perbandingan lintas-arsitektur tetap adil."
     )
@@ -476,18 +476,18 @@ elif page.startswith("4"):
     }))
 
     st.markdown(
-        f"**Dua arsitektur, dua cara memandang mahasiswa yang sama — dan justru di situ letak temuannya.**\n\n"
+        f"**Dua arsitektur, dua cara memandang mahasiswa yang sama**\n\n"
         f"- **FNN** mengunci **`{fnn_drv['Feature'].iloc[0]}`** ({fnn_drv['Importance_Mean'].iloc[0]:.4f}) sebagai "
         f"penggerak dominan. Sebagai model tanpa struktur sekuensial, FNN mencari **sinyal tunggal terkuat** yang "
-        f"berkorelasi non-linear dengan capaian akademik — dan status kemandirian ekonomi adalah pembeda paling tajam "
-        f"yang bisa ia temukan dalam ruang fitur datar.\n"
+        f"berkorelasi non-linear dengan capaian akademik, dan status kemandirian ekonomi adalah pembeda paling tajam "
+        f"yang bisa model temukan dalam ruang fitur datar.\n"
         f"- **BiLSTM + Attention** justru menempatkan **`{lstm_drv['Feature'].iloc[0]}`** "
         f"({lstm_drv['Importance_Mean'].iloc[0]:.4f}) di puncak. Karena membaca domain secara berurutan, model ini "
         f"memperlakukan **kualitas lingkungan fisik belajar sebagai *gatekeeper* di hulu sekuens**: kondisi ruang "
         f"dan fasilitas yang buruk menyetel ulang cara seluruh domain berikutnya dibaca.\n"
         f"- **Konvergensi yang paling meyakinkan:** meski peringkat teratasnya berbeda, kedua arsitektur "
         f"**sama-sama menaikkan blok Angkatan (`Angkatan_2022`, `Angkatan_2024`)** ke jajaran atas. Konsensus "
-        f"lintas-arsitektur ini menguatkan dugaan adanya **efek kohort/temporal** — angkatan yang berbeda menghadapi "
+        f"lintas-arsitektur ini menguatkan dugaan adanya **efek kohort/temporal** angkatan yang berbeda menghadapi "
         f"kondisi eksternal yang berbeda, dan model mendeteksinya secara independen."
     )
 
