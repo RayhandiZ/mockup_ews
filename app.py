@@ -448,13 +448,13 @@ elif page.startswith("4"):
     g1, g2, g3 = st.columns(3)
     g1.error(
         "**🔴 Dominant Driver**\n\nKontribusi tertinggi terhadap keputusan model. Fitur inilah yang paling "
-        "menentukan apakah seorang mahasiswa ditandai berisiko — sekaligus **titik ungkit intervensi paling efektif** "
+        "menentukan apakah seorang mahasiswa ditandai berisiko, sekaligus menjadi **titik ungkit intervensi paling efektif** "
         "bagi kampus."
     )
     g2.success(
         "**🟢 Latent Core**\n\nKontribusi rata-rata sedang, **tetapi dengan variabilitas tinggi antar-fold** "
         "(CV besar). Artinya fitur ini **sangat menentukan untuk sebagian mahasiswa dan nyaris tidak berarti "
-        "bagi yang lain** — sinyal personal, bukan sinyal populasi. Justru fitur seperti inilah yang paling "
+        "bagi yang lain** dikarenakan sinyal hanya personal, bukan sinyal populasi. Justru fitur seperti inilah yang paling "
         "berbahaya bila diotomatisasi tanpa pengawasan manusia."
     )
     g3.info(
